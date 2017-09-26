@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Signin page
+	</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+
+		function submit(){
+			var userTextBox = document.getElementById("username").value;
+			$.post("/submit", {"username": userTextBox})
+			alert('test');
+		}
+	</script>
+</head>
+<body>
+	<h1>Signin credentials : </h1><br/>
+	<div>
+		<p>Username : </p><input id="username" type="text" /><br/>
+		<p>Password : </p><input type="password"/><br/>
+		<button onClick="submit()">Submit</button>
+	</div>
+</body>
+</html>
