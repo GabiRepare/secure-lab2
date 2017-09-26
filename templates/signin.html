@@ -6,11 +6,20 @@
 	</title>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
+		var p = 541 
+
 
 		function submit(){
 			var userTextBox = document.getElementById("username").value;
 			$.post("/submit", {"username": userTextBox})
-			alert('test');
+			var confirmPin = prompt("Please enter the SMS confirmation code : ", "");
+			var userPwd = document.getElementById("pwd").value;
+			console.log(userPwd);
+			console.log(confirmPin)
+			var K = Math.pow(confirmPin, userPwd) % 541;
+
+
+			alert(K);
 		}
 	</script>
 </head>
@@ -18,7 +27,7 @@
 	<h1>Signin credentials : </h1><br/>
 	<div>
 		<p>Username : </p><input id="username" type="text" /><br/>
-		<p>Password : </p><input type="password"/><br/>
+		<p>Password : </p><input id="pwd" type="password"/><br/>
 		<button onClick="submit()">Submit</button>
 	</div>
 </body>
