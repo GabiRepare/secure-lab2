@@ -7,3 +7,5 @@
 1. Install Flask `pip install flask`
 1. Set the main program file `export FLASK_APP=main.py`
 1. Run the server locally `flask run`
+
+https://www.twilio.com/docs/tutorials/account-verification-python-flask#building-blocks
