@@ -4,22 +4,20 @@
 	<title>
 		Signin page
 	</title>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script>
 		var p = 541 
 
 
 		function submit(){
 			var userTextBox = document.getElementById("username").value;
-			$.post("/submit", {"username": userTextBox})
+			var pwdTextBox = document.getElementById("pwd").value;
+			$.post("/submit", {"username": userTextBox, "pwd": pwdTextBox})
+			
 			var confirmPin = prompt("Please enter the SMS confirmation code : ", "");
-			var userPwd = document.getElementById("pwd").value;
-			console.log(userPwd);
-			console.log(confirmPin)
-			var K = Math.pow(confirmPin, userPwd) % 541;
-
-
-			alert(K);
+			$.post("/verify", {"verify": confirmPin}, function( data){
+				alert(data)
+			})
 		}
 	</script>
 </head>
