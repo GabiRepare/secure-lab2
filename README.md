@@ -8,4 +8,5 @@
 1. Set the main program file `export FLASK_APP=main.py`
 1. Run the server locally `flask run`
 
-https://www.twilio.com/docs/tutorials/account-verification-python-flask#building-blocks
+## Description
+This is a very basic website that ask the user for its username and password, sends a 4 digit code by SMS using the [Twilio](https://www.twilio.com/) API and waits for the user to enter the 2nd factor auth code. For the sake of simplicy, the password is sent to the API in clear text format which is totally unsafe. The goal of this lab is to demonstrate our understanding of the 2nd factor authentification.
